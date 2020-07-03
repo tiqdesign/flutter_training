@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rounded_progress_bar/flutter_rounded_progress_bar.dart';
+import 'package:flutter_rounded_progress_bar/rounded_progress_bar_style.dart';
 import 'package:flutteranimation/Models/Post.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,18 +11,18 @@ class CustomEmptyContainer extends StatefulWidget {
 
 class _CustomEmptyContainerState extends State<CustomEmptyContainer> {
   List<Post> posts = [
-    Post('Person 1', 'assets/1f937-1f3fc.svg'),
-    Post('Person 2', 'assets/1f422.svg'),
-    Post('Person 3', 'assets/1f423.svg'),
-    Post('Person 4', 'assets/1f424.svg'),
-    Post('Person 5', 'assets/1f425.svg'),
-    Post('Person 6', 'assets/1f426.svg'),
-    Post('Person 7', 'assets/1f427.svg'),
-    Post('Person 8', 'assets/1f428.svg'),
-    Post('Person 9', 'assets/1f429.svg'),
-    Post('Person 10','assets/1f430.svg'),
-    Post('Person 11','assets/1f422.svg'),
-    Post('Person 12','assets/1f423.svg'),
+    Post('Person 1', 'assets/popcorn .png'),
+    Post('Person 2', 'assets/cute.png'),
+    Post('Person 3', 'assets/file.png'),
+    Post('Person 4', 'assets/popcorn .png'),
+    Post('Person 5', 'assets/cute.png'),
+    Post('Person 6', 'assets/popcorn .png'),
+    Post('Person 7', 'assets/cute.png'),
+    Post('Person 8', 'assets/popcorn .png'),
+    Post('Person 9', 'assets/file.png'),
+    Post('Person 10','assets/cute.png'),
+    Post('Person 11','assets/popcorn .png'),
+    Post('Person 12','assets/cute.png'),
   ];
 
   @override
@@ -35,20 +37,55 @@ class _CustomEmptyContainerState extends State<CustomEmptyContainer> {
             itemCount: posts.length,
             itemBuilder: (context, index) {
           return Card(
-            color: Colors.white,
+            color: Color(0xffF9F9F9),
             shape: RoundedRectangleBorder(
-              side: BorderSide(width: 0.1, color: Colors.grey),
                 borderRadius: BorderRadius.circular(8)
             ),
-            elevation: 2,
-            child: ListTile(
-              leading: SvgPicture.asset(posts[index].img),
-              title: Text(
-                posts[index].title,
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black38),
+            elevation: 0,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8.0,8.0,16.0,8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 15,
+                        child: Center(child: Text('11 Paket', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black38),)),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.deepOrangeAccent,
+                        ),
+                      ),
+
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0,8.0,0,8.0),
+                        child: Text(
+                          posts[index].title,
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black38),
+                        ),
+                      ),
+                      Container(
+                        color: Color(0xffF9F9F9),
+                        width: MediaQuery.of(context).size.width/2,
+                        height: 80,
+                        child: RoundedProgressBar(
+                            milliseconds:1000,
+                            percent: 11,
+                            theme: RoundedProgressBarTheme.yellow,
+                            borderRadius: BorderRadius.circular(24)),
+                      ),
+                    ],
+                  ),
+                  Image.asset(posts[index].img,width: 50,)
+                ],
               ),
             ),
           );
