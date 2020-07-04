@@ -15,32 +15,35 @@ class KeepBar extends StatelessWidget implements PreferredSizeWidget {
       child: Container(
         height: height,
         color: Colors.transparent,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(12.0, 4.0, 12.0, 4.0),
-          child: Card(
-            elevation: 5.0,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.menu),
-                  onPressed: () => {},
-                ),
-                Container(
-                    width: MediaQuery.of(context).size.width / 2,
-                    child: Text(
-                      'Notlarınızı arayın',
-                      style: TextStyle(color: Color(0xff454545), fontSize: 16),
-                    )),
-                IconButton(
-                  icon: Icon(Icons.create),
-                  onPressed: () => {},
-                ),
-                Image.asset('assets/file.png',width: 35,),
-              ],
+        child: FittedBox(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12.0, 4.0, 12.0, 4.0),
+            child: Card(
+              elevation: 5.0,
+              shape:
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.menu),
+                    onPressed: () => {},
+                  ),
+                  Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Text(
+                        'Notlarınızı arayın',
+                        style: TextStyle(color: Color(0xff454545), fontSize: 16),
+                      )),
+                  IconButton(
+                    icon: Icon(Icons.create),
+                    onPressed: () => {},
+                  ),
+                  Image.asset('assets/file.png',width: 35,),
+                  SizedBox(width: 10,),
+                ],
+              ),
             ),
           ),
         ),

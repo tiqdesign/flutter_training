@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rounded_progress_bar/flutter_rounded_progress_bar.dart';
 import 'package:flutter_rounded_progress_bar/rounded_progress_bar_style.dart';
 import 'package:flutteranimation/Models/Post.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 class CustomEmptyContainer extends StatefulWidget {
   @override
@@ -36,18 +36,17 @@ class _CustomEmptyContainerState extends State<CustomEmptyContainer> {
           physics: BouncingScrollPhysics(),
             itemCount: posts.length,
             itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Card(
-              color: Color(0xffF9F9F9),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)
-              ),
-              elevation: 0,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(8.0,8.0,12.0,8.0),
+          return FittedBox(
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Card(
+                color: Color(0xffF9F9F9),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16)
+                ),
+                elevation: 0,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(16.0,16.0,20.0,16.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
