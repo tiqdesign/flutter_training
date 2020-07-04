@@ -39,35 +39,7 @@ class KeepBar extends StatelessWidget implements PreferredSizeWidget {
                   icon: Icon(Icons.create),
                   onPressed: () => {},
                 ),
-                Container(
-                  width: 40,
-                  height: 40,
-                  child: Card(
-                    color: Colors.amber,
-                    elevation: 4,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0)),
-                    child: ClipOval(
-                      child: CachedNetworkImage(
-                        imageUrl:
-                            "https://images.pexels.com/photos/4549416/pexels-photo-4549416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                        imageBuilder: (context, imageProvider) => Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: imageProvider,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        placeholder: (context, url) =>
-                            CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                      ),
-                    ),
-                  ),
-                ),
+                Image.asset('assets/file.png',width: 35,),
               ],
             ),
           ),
