@@ -37,6 +37,7 @@ class _MainPageState extends State<MainPage> {
   int selectedPage = 0;
   final globalKey = GlobalKey<ScaffoldState>();
 
+  //for internet connection
   void Check() async {
     try {
       final result = await InternetAddress.lookup('google.com');
@@ -63,6 +64,7 @@ class _MainPageState extends State<MainPage> {
               ]);
         });
   }
+
 
   @override
   void initState() {
